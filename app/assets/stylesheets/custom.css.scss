@@ -19,7 +19,7 @@ html {
 body {
   padding-top: 60px;
  // background-image:url('content.png'); 
- // background-color: $grayLighter; 
+  background-color: #d4d4d4; 
   background-position:center top;
 }
 
@@ -38,15 +38,16 @@ textarea {
   }
   background-image:url('content.png');
   border-style:solid;
+  border-width:1px;
   border-color: $grayDark;
 }
 
-/*
+
 .btn {
   position:relative;
-  top:40px;
+  top:15px;
 }
-*/
+
 
 /* typography */
 
@@ -99,8 +100,8 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
+  border-top: 1px solid $grayDark;
+  color: $gray;
   a {
     color: $gray;
     &:hover { 
