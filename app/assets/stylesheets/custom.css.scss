@@ -18,6 +18,9 @@ html {
 
 body {
   padding-top: 60px;
+ // background-image:url('content.png'); 
+ // background-color: $grayLighter; 
+  background-position:center top;
 }
 
 section {
@@ -33,7 +36,17 @@ textarea {
   h1 {
     margin-bottom: 10px;
   }
+  background-image:url('content.png');
+  border-style:solid;
+  border-color: $grayDark;
 }
+
+/*
+.btn {
+  position:relative;
+  top:40px;
+}
+*/
 
 /* typography */
 
@@ -54,7 +67,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
+  color: $grayDark;
 }
 
 p {
