@@ -27,9 +27,7 @@ class User < ActiveRecord::Base
 
   def self.search(search)
     if search
-      find(:all, :conditions => ['email MATCH ?', "%#{search}%"])
-    else
-      find(:all)
+      find(:all, :conditions => ['email LIKE ?', "%#{search}%"])
     end
   end
 
