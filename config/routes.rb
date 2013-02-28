@@ -1,4 +1,19 @@
 SampleApp::Application.routes.draw do
+  
+  resources :movies do
+    collection do
+      get 'add'
+      post 'add'
+      get 'choose'
+      post 'choose'
+      get 'imdb_find_by_id'
+      post'imdb_find_by_id'
+      get 'customize'
+      post 'customize'
+    end
+  end
+
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 

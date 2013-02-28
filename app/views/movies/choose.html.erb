@@ -1,0 +1,37 @@
+ <% if @choose.any? %>
+<ul id="shelf">
+
+<% for i in (0..@choose.count-1) %>
+
+
+ <li class="box" id="post-17">
+        <div class="postim" id="post-17">
+            <div class="btitle">
+                <h2><a href="http://localhost/wp/?book=sfdsdfdsfs" rel="bookmark" title="Permanent Link to sfdsdfdsfs"><%= @choose[i][0] %></a></h2>
+            </div>
+            <span class="inwriter"></span>
+            <%= form_tag(:controller => "movies", :action => "customize") do  %>
+<%= hidden_field_tag(:imdb_id, @choose[i][3]) %>
+    <a href="#" onclick=document.forms[<%=i%>].submit();return false;><img class="bookcover" src=<%= @choose[i][1] %> alt=""/></a>
+<% end %>
+        </div>
+    </li>
+
+
+
+
+ 
+
+
+
+<% end %>
+</ul>
+
+<% end %>
+
+
+
+
+
+
+

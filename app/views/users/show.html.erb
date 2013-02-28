@@ -6,6 +6,24 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+MOVIES:
+      <table>
+  <tr>
+
+    <th>Imdb</th>
+
+  </tr>
+
+<% @user.movies.each do |movie| %>
+  <tr>
+
+    <td><%= movie.imdb %></td>
+   
+  </tr>
+<% end %>
+</table>
+
+
     </section>
   </aside>
 </div>

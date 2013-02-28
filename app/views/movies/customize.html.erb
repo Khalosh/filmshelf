@@ -1,0 +1,41 @@
+<h1>CUSTOMIZE movie</h1>
+
+<%= form_for(@movie) do |f| %>
+  <% if @movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+      <% @movie.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+  <div class="field">
+    <%= f.label :imdb %><br />
+    <%= f.text_field :imdb, :value => @imdb_id[0], :readonly => true %>
+  </div>
+  <div class="field">
+    <%= f.label :media %><br />
+    <%= f.select :media, [['CD','CD'],['DVD','DVD'],['BR','BR']] %>
+  </div>
+  <div class="field">
+    <%= f.label :media_info %><br />
+    <%= f.text_field :media_info %>
+  </div>
+  <div class="field">
+    <%= f.label :seen %><br />
+    <%= f.check_box :seen %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+
+<%= link_to 'Back', movies_path %>

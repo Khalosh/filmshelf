@@ -1,0 +1,26 @@
+
+  <ul id="shelf">
+
+<% for i in (0..@movies.count-1) do %>
+
+
+            
+    <li class="box" id="post-17">
+        <div class="postim" id="post-17">
+            <div class="btitle">
+                <h2><a href="http://localhost/wp/?book=sfdsdfdsfs" rel="bookmark" title="Permanent Link to sfdsdfdsfs"><%= @movie_data[i][0] %></a></h2>
+            </div>
+            <span class="inwriter"></span>
+            <a href="http://localhost/wp/?book=sfdsdfdsfs"><img class="bookcover" src=<%= @movie_data[i][1] %>alt=""/></a>
+        </div>
+    </li>
+    
+    
+
+ 
+<% end %>
+</ul>
+
+<br />
+
+<%= link_to 'New Movie', new_movie_path %>
