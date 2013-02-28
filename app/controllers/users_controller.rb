@@ -65,7 +65,7 @@ class UsersController < ApplicationController
 
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(root_path) unless current_user?(@user)
+      redirect_to(current_user) unless current_user?(@user)
     end
 
     def imdb_find_by_id(imdb_id, movie_id)
