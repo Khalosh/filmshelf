@@ -45,5 +45,6 @@
 </div>
 
 </div>
-
+<% if @user == current_user %>
 <%= link_to "Add a movie!", add_path, class: "btn btn-large btn-primary" %>
+<% end %>

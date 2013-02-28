@@ -19,7 +19,7 @@
     <%= f.label :imdb %><br />
     <%= f.text_field :imdb, :value => @imdb_id[0], :readonly => true %>
   </div>
-  <div class="field">
+  <div class="btn-group">
     <%= f.label :media %><br />
     <%= f.select :media, [['CD','CD'],['DVD','DVD'],['BR','BR']] %>
   </div>
@@ -32,7 +32,7 @@
     <%= f.check_box :seen %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-large btn-primary"%>
   </div>
 <% end %>
 
