@@ -6,24 +6,38 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
-MOVIES:
-      <table>
-  <tr>
-
-    <th>Imdb</th>
-
-  </tr>
-
-<% @user.movies.each do |movie| %>
-  <tr>
-
-    <td><%= movie.imdb %></td>
-   
-  </tr>
-<% end %>
-</table>
-
 
     </section>
   </aside>
+</div>
+
+<div id="casing" >
+<div id="home-content" class="clearfix">
+
+  <ul id="shelf">
+
+<% for i in (0..@movies.count-1) do %>
+
+
+            
+    <li class="box" id="post-17">
+        <div class="postim" id="post-17">
+            <div class="btitle">
+                <h2> <%= link_to  :controller => "movies", :action => "show", :id => @movie_data[i][4] do %>
+                  <%= @movie_data[i][0] %>
+                <% end %></h2>
+            </div>
+            <span class="inwriter"></span>
+            <%= link_to  :controller => "movies", :action => "show", :id => @movie_data[i][4] do %>
+            <img class="bookcover" src=<%= @movie_data[i][1] %>alt=""/>
+            <% end %>
+        </div>
+    </li>
+    
+    
+
+ 
+<% end %>
+</ul>
+</div>
 </div>

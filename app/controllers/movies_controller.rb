@@ -4,20 +4,8 @@ class MoviesController < ApplicationController
   # GET /movies.json
   def index
 
-    @movies = Movie.all
-    @movie_data = []
+   redirect_to :controller=>'users', :action => 'show', :id => current_user
 
-          for i in (0..@movies.count-1) do
-           imdb = @movies[i][:imdb]
-          @movie_data[i] = imdb_find_by_id(imdb)
-          end
-
-
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @movies }
-    end
   end
 
   # GET /movies/1
@@ -25,21 +13,25 @@ class MoviesController < ApplicationController
   def show
     @movie = Movie.find(params[:id])
 
+    id = @movie[:id]
+    imdb = @movie[:imdb]
+    @movie_data = imdb_find_by_id(imdb)
+
+
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @movie }
     end
+
   end
 
   # GET /movies/new
   # GET /movies/new.json
   def new
-    @movie = Movie.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @movie }
-    end
+   redirect_to :controller=>'movies', :action => 'add'
+
   end
 
   # GET /movies/1/edit
@@ -214,12 +206,13 @@ title = json[0]['title'].to_s
 poster = json[0]['poster'].to_s
 url = json[0]['imdb_url'].to_s
 imdb_id = json[0]['imdb_id'].to_s
+desc = json[0]['plot_simple'].to_s
 
    #title.to_s
 
      #if ilosc_odpowiedzi >0 and json[0] != false
 
-          film = [title, poster, url, imdb_id]
+          film = [title, poster, url, imdb_id, desc]
 
      #   film['title'] = []#json[0]['title'].to_s
       #  film['poster'] = []#json[0]['poster']

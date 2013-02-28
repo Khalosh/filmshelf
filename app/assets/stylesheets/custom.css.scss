@@ -203,3 +203,85 @@ input {
     }
   }
 }
+
+/* --------------------UREEKA------------------------*/
+
+#casing {
+    width: 940px;
+    margin: 0px auto;
+    background: url(content.png);
+    padding: 0px 0px;
+  height: 100%;
+
+}
+
+
+#home-content {
+    background: url(homecontent.png) repeat-y;
+    padding: 0px 0px;
+}
+
+#shelf {
+    width: 800px;
+    margin: 0px auto;
+}
+
+.box {
+    width: 150px;
+    background: #fff;
+    margin: 25px 25px 75px 25px;
+    float: left;
+}
+
+.postim {
+    width: 150px;
+    height: 190px;
+    background: #fff url(cd.png) repeat-y;
+    margin: 0px 0px;
+    overflow: hidden;
+    -webkit-box-shadow: 3px -2px 1px 0px #eee;
+    -moz-box-shadow: 3px -2px 1px 0px #eee;
+    box-shadow: 3px -2px 1px 0px #eee;
+    position: relative;
+}
+
+.postim img {
+    position: relative;
+    width: 150px;
+    height: 190px;
+}
+
+.postim a {
+    display: block;
+}
+
+.btitle {
+    width: 150px;
+    height:100%;
+    position: absolute;
+    padding-top: 15px;
+    left: 0px;
+
+}
+
+.btitle h2 {
+    font-size: 14px;
+    margin: 0px 0px;
+    padding: 0px 15px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 120%;
+}
+
+.btitle h2 a:link,.btitle h2 a:visited {
+    color: white;
+}
+
+span.inwriter {
+    width: 150px;
+    font-size: 10px;
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
+    text-align: center;
+}

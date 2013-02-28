@@ -1,4 +1,6 @@
  <% if @choose.any? %>
+ <div id="casing" >
+<div id="home-content" class="clearfix">
 <ul id="shelf">
 
 <% for i in (0..@choose.count-1) %>
@@ -7,7 +9,7 @@
  <li class="box" id="post-17">
         <div class="postim" id="post-17">
             <div class="btitle">
-                <h2><a href="http://localhost/wp/?book=sfdsdfdsfs" rel="bookmark" title="Permanent Link to sfdsdfdsfs"><%= @choose[i][0] %></a></h2>
+                <h2><%= @choose[i][0] %></h2>
             </div>
             <span class="inwriter"></span>
             <%= form_tag(:controller => "movies", :action => "customize") do  %>
@@ -26,7 +28,8 @@
 
 <% end %>
 </ul>
-
+</div>
+</div>
 <% end %>
 
 

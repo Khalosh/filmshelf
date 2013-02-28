@@ -1,30 +1,64 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>User:</b>
-  <%= @movie.user %>
-</p>
+            
+<div id="movie" class="well well-large">
+	                <h2> 
+                  <%= @movie_data[0] %>
+               </h2>
+               <div id="poster">
+            <img src=<%= @movie_data[1] %>  alt=<%= @movie_data[0] %>/>    
+</div>
+<div id="movie_desc" class="well well-large" > 
+<h3>Movie Description:</h3>
+<%= @movie_data[4] %>
+</br>
+</br>
+<a href=<%= @movie_data[2] %>> Read more about <%= @movie_data[0] %> on imdb.com</a>
+            
+</div>
+</div>
 
-<p>
-  <b>Imdb:</b>
-  <%= @movie.imdb %>
-</p>
-
-<p>
-  <b>Media:</b>
-  <%= @movie.media %>
-</p>
-
-<p>
-  <b>Media info:</b>
-  <%= @movie.media_info %>
-</p>
-
-<p>
-  <b>Seen:</b>
-  <%= @movie.seen %>
-</p>
-
-
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
+
+<% if current_user.id == @movie.user_id %>
+<div id="movie_edit" class="well well-large" >
+<h2>Edit:</h2>
+
+<%= form_for(@movie) do |f| %>
+  <% if @movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+      <% @movie.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :imdb %>
+  </div>
+  <div class="field">
+    <%= f.label :media %><br />
+    <%= f.select :media, [['CD','CD'],['DVD','DVD'],['BR','BR']] %>
+  </div>
+  <div class="field">
+    <%= f.label :media_info %><br />
+    <%= f.text_field :media_info %>
+  </div>
+  <div class="field">
+    <%= f.label :seen %><br />
+    <%= f.check_box :seen %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+</div>
+<% end %>
