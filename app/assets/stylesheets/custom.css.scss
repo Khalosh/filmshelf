@@ -228,6 +228,9 @@ input {
 #home-content {
     background: url(homecontent.png) repeat-y;
     padding: 0px 0px;
+    border-style:solid;
+    border-width:1px;
+    border-color: $grayDark;
 }
 
 #shelf {

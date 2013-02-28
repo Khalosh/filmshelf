@@ -11,6 +11,7 @@ class UsersController < ApplicationController
       else
         flash.now[:error] = "There is no user registered with that email"
       end
+    else
     end
   end
 

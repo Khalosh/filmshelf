@@ -2,10 +2,8 @@
 <h1>All users</h1>
 
 <%= form_tag users_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil, class: "btn btn-large btn-primary" %>
-  </p>
+    <%= text_field_tag :search, params[:search], class: "search-query", placeholder: "Search by email"%>
+    <%= submit_tag "Search", :name => nil, class: "btn"%>
 <% end %>
 
 <%= will_paginate %>
