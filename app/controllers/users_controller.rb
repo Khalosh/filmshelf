@@ -4,6 +4,10 @@ class UsersController < ApplicationController
 
   def index
     @users = User.paginate(page: params[:page])
+    if !params[:search].blank?
+      @user = User.search(params[:search])
+      redirect_to @user
+    end
   end
 
   def show
