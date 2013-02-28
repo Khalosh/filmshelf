@@ -25,6 +25,12 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }
   validates :password_confirmation, presence: true
 
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['email LIKE ?', "%#{search}%"])
+    end
+  end
+
   private
 
     def create_remember_token
