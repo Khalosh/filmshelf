@@ -1,6 +1,3 @@
-<% provide(:title, 'My friends') %>
-<h1>My friends</h1>
-
 <div id="requests" class="well well-large" >
   <h4>People who invited you to become a friend:</h4>
 <% for i in (0..@pending_requests.count-1) do %>
@@ -20,22 +17,3 @@
 <% end %>
 
 </div>
-
-<div id="friends_all" class="well well-large" >
-  <h4>My friends:</h4>
-<% for i in (0..@friends.count-1) do %>
-<div id="friend" class="well">
-<%= gravatar_for @friends[i], size: 52 %>
-<%= link_to  :controller => "users", :action => "show", :id => @friends[i][:id] do %>
-                  <%= @friends[i][:name] %>
-<% end %>
-</br>
-<%= link_to "Unfriend", friend_path(@friends[i][:id]), :method => "delete", class: "btn btn-small btn-danger" %>
-
-</div>
-</br>
-<% end %>
-
-</div>
-
-
