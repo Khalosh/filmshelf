@@ -10,7 +10,7 @@
 </div>
 <div id="movie_desc" class="well" > 
 
-      <h4><%= pluralize(@movie_data[6].count, "Director:") %></h4>
+      <h4><%= @movie_data[6].count == 1 ? "Director" : "Director".pluralize  %></h4>
   <% for i in (0..@movie_data[6].count-1) do %> 
   <%= @movie_data[6][i] %>
 </br>

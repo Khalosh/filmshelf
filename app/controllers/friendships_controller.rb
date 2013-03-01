@@ -8,6 +8,7 @@ class FriendshipsController < ApplicationController
 
   def new
     @users = User.all :conditions => ["id != ?", current_user.id]
+
   end
 
   def create
