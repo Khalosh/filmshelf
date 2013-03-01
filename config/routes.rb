@@ -27,6 +27,8 @@ SampleApp::Application.routes.draw do
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
 
+  match '/search',  to: 'users#search_results'
+
   match '/add',  to: 'movies#add'
   
   match '/help',    to: 'static_pages#help'
