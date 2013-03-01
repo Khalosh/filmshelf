@@ -248,7 +248,7 @@ input {
 
 .postim {
     width: 150px;
-    height: 190px;
+    height: 222px;
     background: #fff url(cd.png) repeat-y;
     margin: 0px 0px;
     overflow: hidden;
@@ -261,7 +261,7 @@ input {
 .postim img {
     position: relative;
     width: 150px;
-    height: 190px;
+    height: 222px;
 }
 
 .postim a {
@@ -287,7 +287,8 @@ input {
 }
 
 .btitle h2 a:link,.btitle h2 a:visited {
-    color: white;
+    text-decoration:none;
+    color: $grayLighter;
     height:190px;
 }
 
