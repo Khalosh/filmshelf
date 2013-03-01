@@ -5,11 +5,11 @@ class UsersController < ApplicationController
   def index
     @users = User.paginate(page: params[:page])
     if !params[:search].blank?
-      @user = User.search(params[:search]).first
+      @user = User.search(params[:search])
       if @user
-        redirect_to @user
+        render 'search_results'
       else
-        flash.now[:error] = "There is no user registered with that email"
+        flash.now[:error] = "No users found"
       end
     else
     end
