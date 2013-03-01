@@ -1,28 +1,40 @@
-<p id="notice"><%= notice %></p>
+
 
             
 <div id="movie" class="well well-large">
 	                <h2> 
                   <%= @movie_data[0] %>
                </h2>
-               <div id="poster">
+               <div id="movie_poster" class="pull-left">
             <img src=<%= @movie_data[1] %>  alt=<%= @movie_data[0] %>/>    
 </div>
-<div id="movie_desc" class="well well-large" > 
-<h3>Movie Description:</h3>
+<div id="movie_desc" class="well" > 
+
+      <h4><%= pluralize(@movie_data[6].count, "Director:") %></h4>
+  <% for i in (0..@movie_data[6].count-1) do %> 
+  <%= @movie_data[6][i] %>
+</br>
+  <% end %>
+
+  <h4> Actors: </h4>
+  <% for i in (0..5) do %> 
+  <%= @movie_data[5][i] %>
+</br>
+  <% end %>
+
+<h4>Movie Description:</h4>
 <%= @movie_data[4] %>
 </br>
 </br>
 <a href=<%= @movie_data[2] %>> Read more about <%= @movie_data[0] %> on imdb.com</a>
             
 </div>
+<%= link_to 'Back to my shelf', movies_path %>
 </div>
-
-<%= link_to 'Back', movies_path %>
 
 <% if current_user.id == @movie.user_id %>
 <div id="movie_edit" class="well well-large" >
-<h2>Edit:</h2>
+<h4>Edit movie:</h4>
 
 <%= form_for(@movie) do |f| %>
   <% if @movie.errors.any? %>
@@ -44,21 +56,25 @@
     <%= f.hidden_field :imdb %>
   </div>
   <div class="field">
-    <%= f.label :media %><br />
+    <%= f.label :media %>
     <%= f.select :media, [['CD','CD'],['DVD','DVD'],['BR','BR']] %>
   </div>
   <div class="field">
-    <%= f.label :media_info %><br />
+    <%= f.label :media_info %>
     <%= f.text_field :media_info %>
   </div>
   <div class="field">
-    <%= f.label :seen %><br />
+    <%= f.label :seen %>
     <%= f.check_box :seen %>
   </div>
+</br>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-
+  <h4>Delete movie:</h4>
+    <div class="btn btn-large"> 
+      <%= link_to 'Delete Movie', @movie, confirm: 'Are you sure?', method: :delete %>
+ </div>
 </div>
 <% end %>

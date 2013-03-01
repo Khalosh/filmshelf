@@ -207,12 +207,16 @@ poster = json[0]['poster'].to_s
 url = json[0]['imdb_url'].to_s
 imdb_id = json[0]['imdb_id'].to_s
 desc = json[0]['plot_simple'].to_s
+actors = []
+actors = json[0]['actors']
+directors = []
+directors = json[0]['directors']
 
    #title.to_s
 
      #if ilosc_odpowiedzi >0 and json[0] != false
 
-          film = [title, poster, url, imdb_id, desc]
+          film = [title, poster, url, imdb_id, desc, actors, directors]
 
      #   film['title'] = []#json[0]['title'].to_s
       #  film['poster'] = []#json[0]['poster']
