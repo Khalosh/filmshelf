@@ -11,6 +11,10 @@
   </aside>
 </div>
 
+<% if @user != current_user %>
+<%= link_to "Send friend request",  :controller => "friendships", :action => "create", :id => @user %>
+<% end %>
+
 <div id="casing" >
 <div id="home-content" class="clearfix">
 
