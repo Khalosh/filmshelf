@@ -10,6 +10,9 @@
 #
 
 class User < ActiveRecord::Base
+  include Amistad::FriendModel
+  
+
   has_many :movies
   attr_accessible :name, :email, :password, :password_confirmation
   has_secure_password
@@ -30,6 +33,8 @@ class User < ActiveRecord::Base
       find(:all, :conditions => ['email LIKE ?', "%#{search}%"])
     end
   end
+
+  
 
   private
 

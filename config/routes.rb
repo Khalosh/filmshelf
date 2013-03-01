@@ -13,6 +13,10 @@ SampleApp::Application.routes.draw do
     end
   end
 
+  resources :friends, :controller => 'friendships', :except => [:show, :edit] do
+    get "requests", :on => :collection
+    get "invites", :on => :collection
+  end
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
